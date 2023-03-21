@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import Body from './components/Body';
+import Header from './components/Header';
+import showSidebarContext from './utils/ShowSidebarContext';
 function App() {
+
+  /*
+    APP LAYOUT
+
+    Header
+    Body
+      SideBar
+        Menu Items
+      Main Container
+        Filter Buttons List
+        Video Container
+          Video Card
+
+  */
+
+  const [showSidebar,setShowSidebar] = useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <showSidebarContext.Provider value={{showSidebar , setShowSidebar}} >
+        <Header />
+        <Body />
+      </showSidebarContext.Provider>
     </div>
   );
 }
