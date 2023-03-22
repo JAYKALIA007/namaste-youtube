@@ -1,14 +1,14 @@
-import MainContainer from "./MainContainer"
+// import MainContainer from "./MainContainer"
 import Sidebar from "./Sidebar"
 import { useSelector } from "react-redux"
+import { Outlet } from "react-router-dom"
 const Body = () => {
 
     const showSidebar = useSelector(store => store.showSidebar.show)
-    // console.log(showSidebar)
     return(
         <div className="m-2 p-2 flex" >
             { showSidebar &&  <Sidebar/>}
-            <MainContainer/>
+            <Outlet />
         </div>
     )
 }

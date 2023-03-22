@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import './App.css';
 import Body from './components/Body';
 import Header from './components/Header';
-import showSidebarContext from './utils/ShowSidebarContext';
+import { createBrowserRouter , RouterProvider } from 'react-router-dom';
+import WatchVideo from './components/WatchVideo';
+import MainContainer from './components/MainContainer';
+import ErrorPage from './components/ErrorPage';
 function App() {
-
   /*
     APP LAYOUT
 
@@ -18,14 +19,28 @@ function App() {
           Video Card
 
   */
+  const appRouter = createBrowserRouter([
+    {
+      path: '/',
+      element: <Body />,
+      errorElement : <ErrorPage />,
+      children:[
+        {
+          path: '/',
+          element: < MainContainer />
+        },
+        {
+          path: 'watch',
+          element : < WatchVideo />
+        }
+      ]
+    }
+  ])
 
-  const [showSidebar,setShowSidebar] = useState(true)
   return (
     <div>
-      <showSidebarContext.Provider value={{showSidebar , setShowSidebar}} >
         <Header />
-        <Body />
-      </showSidebarContext.Provider>
+        <RouterProvider router={appRouter} />
     </div>
   );
 }

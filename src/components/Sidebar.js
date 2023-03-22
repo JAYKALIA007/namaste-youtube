@@ -16,6 +16,7 @@ import { IoMusicalNoteOutline } from "react-icons/io5";
 import { TbLivePhoto } from "react-icons/tb";
 import { SiYoutubegaming } from "react-icons/si";
 import { BsNewspaper } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 
@@ -23,7 +24,7 @@ const Sidebar = () => {
     return(
         <div className="w-1/6 border border-black m-2 p-2 text-lg" >
             <ul className="py-2">
-                <li className="py-1"><AiOutlineHome className="inline mr-2" />Home</li>
+                <li className="py-1"><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
                 <li className="py-1"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>
                 <li className="py-1"><MdOutlineSubscriptions className="inline mr-2"  />Subscriptions</li>
             </ul>

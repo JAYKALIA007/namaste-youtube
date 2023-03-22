@@ -3,7 +3,7 @@ import VideoContainer from "./VideoContainer"
 import FilterButtonContainer from "./FilterButtonContainer"
 
 const MainContainer = () => {
-    const { showSidebar } = useSelector(store => store.showSidebar.show)
+    const  showSidebar  = useSelector(store => store.showSidebar.show)
     return(
         <div className={`${showSidebar ? 'w-5/6' : 'w-full'} border border-black m-2 p-2`} >
             <FilterButtonContainer />

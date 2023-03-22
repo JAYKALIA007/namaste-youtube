@@ -1,14 +1,28 @@
-const VideoCard = () => {
+import { useSelector } from "react-redux"
+import { Link } from 'react-router-dom'
+
+const VideoCard = ({items}) => {
+    const  showSidebar  = useSelector(store => store.showSidebar.show)
+    // console.log(showSidebar)
+    const { snippet , statistics, contentDetails} = items 
+    const { channelTitle , title, thumbnails } = snippet
+    const { viewCount, likeCount } = statistics
+    const { duration } = contentDetails
+    const timestamp = duration.slice(2).replace('M',':').replace('S',"")
+
     return(
-        <div className="border border-black rounded-md p-2 m-4 mx-12 w-1/4 inline-block" >
-            <img className="border border-black w-full"  style={{"height":"200px"}} src="https://camo.githubusercontent.com/5ebc638bb3e5113c5a87a5462197c35f40f7185ea9940e7723846b6e403f8a6b/68747470733a2f2f6372656174652d72656163742d6170702e6465762f696d672f6c6f676f2e737667"  alt="dummy"/>
-            <p className="text-right relative bottom-7 right-3 " >2:25</p>
-            <p className="text-xl font-bold " >Title</p>
-            <p className="text-s" >ChannelName</p>
-            <div className="flex" >
-                <p className="mr-2" >ViewCount</p>
-                <p className="" >UploadDate</p>
+        <div className={`inline-block shadow-lg shadow-slate-300 rounded-md p-4 mx-8 my-4 ${showSidebar ? 'w-1/5' : 'w-1/5'} `} >
+            <Link to={`/watch?v=${items.id}`}>
+            <img className="rounded-lg" src={thumbnails.high.url}  alt="thumbnail"/>
+            <p className="text-right relative bottom-7 right-3 text-white text-sm " >{timestamp}</p>
+            <p className="text-md font-bold text-gray-700" >{title}</p>
+            <p className="text-sm font-bold my-2 text-gray-700" >{channelTitle}</p>
+            <div className="flex font-xs text-gray-600" >
+                <p className="mr-2" >{viewCount} views</p>
+                <p className="text-3xl mr-1">°{" "}</p>
+                <p className="" >{likeCount} likes</p>
             </div>
+            </Link>
         </div>
     )
 }

@@ -1,8 +1,16 @@
-
+import Button from "./Button"
 const FilterButtonContainer = () => {
+    const buttonNameList = ["All", "Gaming", "Gadgets", "Music", "KSI", "Comedy",
+                            "FIFA", "Zayn", "Divine", "Live", "Gaming", "Gadgets",
+                            "Music", "KSI", "Comedy", "FIFA", "Zayn", "Divine", "Live"
+                        ]
     return(
-        <div className="overflow-auto" >
-            {Array(13).fill(" ").map((e,index)=>(<button className="bg-gray-300 mx-5 py-1 px-2 rounded-md " key={index}>Filter</button>))}
+        <div className="flex overflow-x-scroll" >
+            {buttonNameList.map((button,index)=>{
+                return(
+                    <Button key={index} name={button}/>
+                )
+            })}
         </div>
     )
 }
