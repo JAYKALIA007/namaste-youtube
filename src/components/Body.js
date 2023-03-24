@@ -6,7 +6,7 @@ const Body = () => {
 
     const showSidebar = useSelector(store => store.showSidebar.show)
     return(
-        <div className="m-2 p-2 flex" >
+        <div className="m-2 p-2 flex absolute top-20" >
             { showSidebar &&  <Sidebar/>}
             <Outlet />
         </div>
