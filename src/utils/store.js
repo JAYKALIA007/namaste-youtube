@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import searchSuggestionsCacheSlice from "./searchSuggestionsCacheSlice";
 import showSidebarSlice from "./showSidebarSlice";
 const store = configureStore({
     reducer : {
-        showSidebar : showSidebarSlice 
+        showSidebar : showSidebarSlice ,
+        searchSuggestionCache : searchSuggestionsCacheSlice
     }
 })
 

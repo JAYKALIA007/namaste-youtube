@@ -10,10 +10,11 @@ const WatchVideo = () => {
     const [searchParams] = useSearchParams();
     const videoId = searchParams.get("v")
 
-    console.log(videoId)
+    // console.log(videoId)
 
     useEffect(()=>{
         dispatch(closeSidebar())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
   return (

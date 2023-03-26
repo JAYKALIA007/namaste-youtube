@@ -1,11 +1,14 @@
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect } from 'react'
 import { SEARCH_QUERY_URL } from "../utils/constants";
+import { useSelector , useDispatch } from 'react-redux'
+import { addToCache } from "../utils/searchSuggestionsCacheSlice";
 const SearchBar = () => {
   const [ searchQuery , setSearchQuery ] = useState("")
   const [ suggestions , setSuggestions ] = useState()
-  const [showSuggestions , setShowSuggestions ] = useState(false)
-  // console.log(searchQuery)
+  const [ showSuggestions , setShowSuggestions ] = useState(false)
+  const dispatch = useDispatch()
+  const cache = useSelector(store => store.searchSuggestionCache.cache)
   useEffect(()=>{
 
     const timer = setTimeout(()=>{fetchSearchSuggestions(searchQuery)},200)
@@ -13,15 +16,28 @@ const SearchBar = () => {
     return()=>{
       clearTimeout(timer)
     }
-    // fetchSearchSuggestions(searchQuery)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[searchQuery])
 
   const fetchSearchSuggestions = async (searchQuery) => {
-    const data = await fetch(`${SEARCH_QUERY_URL}${searchQuery}`)
-    const jsonData = await data.json()
-    setSuggestions(jsonData[1])
-    // console.log(jsonData[1])
+
+    //check if sugegstions are in cache for this search query
+    if(searchQuery in cache){
+      setSuggestions(cache[searchQuery])
+    }
+    else{
+      const data = await fetch(`${SEARCH_QUERY_URL}${searchQuery}`)
+      const jsonData = await data.json()
+      setSuggestions(jsonData[1])
+  
+      //add to cache 
+      const obj = {}
+      obj[searchQuery] = jsonData[1]
+      dispatch(addToCache(obj))
+    }
+
   }
+
   if(searchQuery!=="" && !suggestions) return null
 
   // console.log(suggestions)
