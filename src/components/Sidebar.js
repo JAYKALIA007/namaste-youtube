@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     return(
-        <div className="w-1/6 border border-black m-2 p-2 text-lg" >
+        <div className="w-1/6 border border-gray-400 shadow-lg rounded-lg m-2 p-2 text-lg" >
             <ul className="py-2">
                 <li className="py-1"><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
                 <li className="py-1"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>

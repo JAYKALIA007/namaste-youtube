@@ -22,7 +22,7 @@ const SearchBar = () => {
   const fetchSearchSuggestions = async (searchQuery) => {
 
     //check if sugegstions are in cache for this search query
-    if(searchQuery in cache){
+    if(cache[searchQuery]){
       setSuggestions(cache[searchQuery])
     }
     else{
@@ -33,7 +33,9 @@ const SearchBar = () => {
       //add to cache 
       const obj = {}
       obj[searchQuery] = jsonData[1]
-      dispatch(addToCache(obj))
+      dispatch(addToCache({
+        [searchQuery] : jsonData[1]
+      }))
     }
 
   }
