@@ -4,6 +4,7 @@ import { closeSidebar } from "../utils/showSidebarSlice"
 import { useEffect } from 'react'
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from './CommentsContainer';
+import LiveCommentsContainer from './LiveCommentsContainer';
 
 const WatchVideo = () => {
     const dispatch = useDispatch()
@@ -19,21 +20,27 @@ const WatchVideo = () => {
     },[])
 
   return (
-    <div className='flex flex-col'>
-      <div>
-          <iframe 
-              width="1000" 
-              height="500" 
-              src={`https://www.youtube.com/embed/${videoId}`}
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen>
-          </iframe>
+    <div className='flex w-full' >
+      <div className='flex flex-col'>
+        <div>
+            <iframe 
+                width="1100" 
+                height="600" 
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen>
+            </iframe>
+        </div>
+        <div>
+          <CommentsContainer />
+        </div>
       </div>
-      <div>
-        <CommentsContainer />
+      <div className='w-full' >
+        <LiveCommentsContainer />
       </div>
     </div>
+    
   )
 }
 
