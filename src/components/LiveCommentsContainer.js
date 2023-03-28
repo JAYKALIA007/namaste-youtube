@@ -44,7 +44,11 @@ const LiveCommentsContainer = () => {
                 )
             }
         </div>
-        <form className='ml-1 py-2 w-full' >
+        <form className='ml-1 py-2 w-full' 
+              onSubmit={(e)=>{
+                e.preventDefault();
+                addCommentToStore()
+            }} >
             <input 
                 className='w-3/4 p-1  mx-2 border border-gray-600 rounded-md'  
                 type="text" name="liveMessage" id="liveMessage" 
@@ -54,12 +58,7 @@ const LiveCommentsContainer = () => {
                     setLiveCommentInput(e.target.value)
                 }}  
             />
-            <button className='p-1 px-2 border border-gray-600 rounded-md bg-gray-200' 
-                onClick={(e)=>{
-                    e.preventDefault();
-                    addCommentToStore()
-                    setLiveCommentInput('')
-                }} >
+            <button className='p-1 px-2 border border-gray-600 rounded-md bg-gray-200' >
                 Send
             </button>
         </form>
