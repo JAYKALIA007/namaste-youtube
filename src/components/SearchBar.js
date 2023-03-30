@@ -4,12 +4,15 @@ import { SEARCH_QUERY_URL } from "../utils/constants";
 import { useSelector , useDispatch } from 'react-redux'
 import { addToCache } from "../utils/searchSuggestionsCacheSlice";
 import SearchBarSuggestionContainer from "./SearchBarSuggestionContainer";
+import { showSuggestionsContainer } from "../utils/showSearchSuggestionsSlice";
 const SearchBar = () => {
   const [ searchQuery , setSearchQuery ] = useState("")
   const [ suggestions , setSuggestions ] = useState()
-  const [ showSuggestions , setShowSuggestions ] = useState(false)
+  // const [ showSuggestions , setShowSuggestions ] = useState(false)
   const dispatch = useDispatch()
   const cache = useSelector(store => store.searchSuggestionCache.cache)
+  const showSuggestions = useSelector(store => store.showSearchSuggestions.show)
+
   useEffect(()=>{
 
     const timer = setTimeout(()=>{fetchSearchSuggestions(searchQuery)},200)
@@ -55,8 +58,8 @@ const SearchBar = () => {
           placeholder="Search" 
           value={searchQuery}
           onChange={(e)=>{setSearchQuery(e.target.value)}}
-          onFocus={()=>setShowSuggestions(true)}
-          // onBlur={()=>setShowSuggestions(false)}
+          onFocus={()=>dispatch(showSuggestionsContainer(true))}
+          // onBlur={()=>dispatch(showSuggestionsContainer(false))}
           />
         <div className="border border-gray-400  inline p-2 px-4 rounded-r-full text-white bg-gray-400">
             <FaSearch className="inline text-xl relative right-1"  />

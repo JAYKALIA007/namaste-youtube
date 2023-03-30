@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from "react-router-dom";
 import { MY_API_KEY } from '../utils/constants';
 import SearchResultCard from './SearchResultCard';
+import { useDispatch } from 'react-redux'; 
+import { showSuggestionsContainer } from '../utils/showSearchSuggestionsSlice';
 const SearchResults = () => {
     const [ searchParams ] = useSearchParams()
     const [ searchResults , setSearchResults ] = useState([])
-    // console.log(searchParams.get('search_query'))
+    const dispatch = useDispatch()
     const query = searchParams.get('search_query')
     useEffect(()=>{
         const SEARCH_RESULTS_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&safeSearch=moderate&key=${MY_API_KEY}`
@@ -16,6 +18,7 @@ const SearchResults = () => {
         const data = await fetch(SEARCH_RESULTS_URL)
         const jsonData = await data.json()
         setSearchResults(jsonData?.items)
+        dispatch(showSuggestionsContainer(false))
     }
 
     //early return
