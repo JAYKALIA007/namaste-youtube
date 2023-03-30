@@ -5,6 +5,7 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import WatchVideo from './components/WatchVideo';
 import MainContainer from './components/MainContainer';
 import ErrorPage from './components/ErrorPage';
+import SearchResults from './components/SearchResults';
 function App() {
   /*
     APP LAYOUT
@@ -19,10 +20,11 @@ function App() {
           Video Card
 
   */
+
   const appRouter = createBrowserRouter([
     {
       path: '/',
-      element: <Body />,
+      element: <><Header /><Body /></>,
       errorElement : <ErrorPage />,
       children:[
         {
@@ -32,6 +34,10 @@ function App() {
         {
           path: 'watch',
           element : < WatchVideo />
+        },
+        {
+          path : 'results',
+          element : <SearchResults />
         }
       ]
     }
@@ -39,7 +45,6 @@ function App() {
 
   return (
     <div>
-        <Header />
         <RouterProvider router={appRouter} />
     </div>
   );

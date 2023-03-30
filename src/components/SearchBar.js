@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { SEARCH_QUERY_URL } from "../utils/constants";
 import { useSelector , useDispatch } from 'react-redux'
 import { addToCache } from "../utils/searchSuggestionsCacheSlice";
+import SearchBarSuggestionContainer from "./SearchBarSuggestionContainer";
 const SearchBar = () => {
   const [ searchQuery , setSearchQuery ] = useState("")
   const [ suggestions , setSuggestions ] = useState()
@@ -55,7 +56,7 @@ const SearchBar = () => {
           value={searchQuery}
           onChange={(e)=>{setSearchQuery(e.target.value)}}
           onFocus={()=>setShowSuggestions(true)}
-          onBlur={()=>setShowSuggestions(false)}
+          // onBlur={()=>setShowSuggestions(false)}
           />
         <div className="border border-gray-400  inline p-2 px-4 rounded-r-full text-white bg-gray-400">
             <FaSearch className="inline text-xl relative right-1"  />
@@ -64,7 +65,7 @@ const SearchBar = () => {
           <div className=" z-10	 text-left  w-1/2 relative left-60 rounded-lg border border-gray-100 p-4 bg-gray-100 shadow-lg" >
               {suggestions.map((suggestion)=>{
                 return(
-                  <p className="p-1 px-2 hover:bg-gray-300 rounded-md cursor-pointer" key={suggestion}><FaSearch className="inline mr-2 font-thin text-sm text-gray-600"/> {suggestion}</p>
+                  <SearchBarSuggestionContainer suggestion={suggestion} key={suggestion}  />
                   )
               })}
           </div>
