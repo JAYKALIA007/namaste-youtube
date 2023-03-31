@@ -118,3 +118,8 @@ export const commentsList = [
     },
 
 ]
+
+export const filterButtonNameList = ["NBA", "Gaming", "Gadgets", "Music", "KSI", "Comedy",
+"FIFA", "Zayn", "Divine", "Live", "Ronaldo", "Messi",
+"News", "esports", "MKBHD", "TheBoys", "Krsna", "History"
+]

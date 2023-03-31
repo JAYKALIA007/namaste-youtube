@@ -1,12 +1,10 @@
 import Button from "./Button"
+import { filterButtonNameList } from "../utils/constants"
 const FilterButtonContainer = () => {
-    const buttonNameList = ["All", "Gaming", "Gadgets", "Music", "KSI", "Comedy",
-                            "FIFA", "Zayn", "Divine", "Live", "Gaming", "Gadgets",
-                            "Music", "KSI", "Comedy", "FIFA", "Zayn", "Divine", "Live"
-                        ]
+    
     return(
         <div className="flex overflow-x-scroll" >
-            {buttonNameList.map((button,index)=>{
+            {filterButtonNameList.map((button,index)=>{
                 return(
                     <Button key={index} name={button}/>
                 )

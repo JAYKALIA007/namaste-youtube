@@ -4,6 +4,7 @@ import { MdOutlineNotifications } from "react-icons/md";
 import SearchBar from "./SearchBar";
 import { useDispatch } from 'react-redux'
 import { toggleSidebar } from "../utils/showSidebarSlice";
+import { Link } from 'react-router-dom'
 const Header = () => {
     const dispatch = useDispatch()
     return(
@@ -11,8 +12,7 @@ const Header = () => {
         <div className="mb-2 p-2 grid grid-flow-col " >
             <div className="col-span-1" >
                 <button className="mx-4" onClick={()=>{ dispatch(toggleSidebar()) }}  ><AiOutlineMenu className="text-2xl relative top-2"/></button>
-                {/* <Link to="/"><img className="inline-block ml-2 bg-white h-16 " src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-700x394.png" alt="youtube logo" /></Link> */}
-                <a href="/"><img className="inline-block ml-2 bg-white h-16 " src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-700x394.png" alt="youtube logo" /></a>
+                <Link to="/"><img className="inline-block ml-2 bg-white h-16 " src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-700x394.png" alt="youtube logo" /></Link>
             </div>
             <div className="col-span-10 text-center" >
                 <SearchBar />
