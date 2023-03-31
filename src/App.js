@@ -6,6 +6,7 @@ import WatchVideo from './components/WatchVideo';
 import MainContainer from './components/MainContainer';
 import ErrorPage from './components/ErrorPage';
 import SearchResults from './components/SearchResults';
+import ChannelVideoList from './components/ChannelVideoList';
 function App() {
   /*
     APP LAYOUT
@@ -38,6 +39,10 @@ function App() {
         {
           path : 'results',
           element : <SearchResults />
+        },
+        {
+          path: 'channel',
+          element : <ChannelVideoList />
         }
       ]
     }

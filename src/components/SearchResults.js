@@ -23,11 +23,10 @@ const SearchResults = () => {
 
     //early return
     if(!searchResults) return null
-
   return (
     <div>
         {searchResults.map(result => (
-            <SearchResultCard key={result?.id?.videoId} data={result}  />
+            <SearchResultCard key={result?.id?.videoId ? result?.id?.videoId : result?.id?.channelId} data={result} isChannel={result?.id?.kind === 'youtube#channel' ? true : false} />
         ))}
     </div>
   )
