@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { YOUTUBE_API_URL } from "../utils/constants"
+import ShimmerVideoCardContainer from "./ShimmerVideoCardContainer"
 import VideoCard from "./VideoCard"
 const VideoContainer = () => {
-    const [ videoList , setVideoList ] = useState()
+    const [ videoList , setVideoList ] = useState([])
     useEffect(()=>{
         fetchYoutubeData()
     },[])
@@ -15,14 +16,13 @@ const VideoContainer = () => {
 
     //early return
     if(!videoList) return null
-    return(
+    return videoList.length === 0  ? (<ShimmerVideoCardContainer />) : (
         <div className="p-2 flex flex-wrap ">
                 {videoList.map(item=>(
                         <VideoCard key={item.id} items={item}/>
                     )
                 )}
         </div>
-    )
-}
+    )}
 
 export default VideoContainer

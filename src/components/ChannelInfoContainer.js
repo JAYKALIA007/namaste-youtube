@@ -7,6 +7,7 @@ const ChannelInfoContainer = ({data}) => {
     const [ channelInfo , setChannelInfo ] = useState()
     useEffect(()=>{
         fetchChannelInfo(data?.id?.channelId)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     const fetchChannelInfo = async(channelId) =>{
         const YOUTUBE_CHANNEL_INFO_URL = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${MY_API_KEY}`

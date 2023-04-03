@@ -4,6 +4,7 @@ import { MY_API_KEY } from '../utils/constants';
 import SearchResultCard from './SearchResultCard';
 import { useDispatch } from 'react-redux'; 
 import { showSuggestionsContainer } from '../utils/showSearchSuggestionsSlice';
+import ShimmerSearchCardContainer from './ShimmerSearchCardContainer';
 const SearchResults = () => {
     const [ searchParams ] = useSearchParams()
     const [ searchResults , setSearchResults ] = useState([])
@@ -23,13 +24,14 @@ const SearchResults = () => {
 
     //early return
     if(!searchResults) return null
-  return (
+  return searchResults.length === 0 ? <ShimmerSearchCardContainer /> : (
     <div>
         {searchResults.map(result => (
             <SearchResultCard key={result?.id?.videoId ? result?.id?.videoId : result?.id?.channelId} data={result} isChannel={result?.id?.kind === 'youtube#channel' ? true : false} />
         ))}
     </div>
   )
+// return <ShimmerSearchCardContainer />
 }
 
 export default SearchResults
