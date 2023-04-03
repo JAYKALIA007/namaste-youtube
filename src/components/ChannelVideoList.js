@@ -2,14 +2,15 @@ import { useEffect , useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { MY_API_KEY } from '../utils/constants'
 import ChannelVideoCard from './ChannelVideoCard'
-import VideoCard from './VideoCard'
+import ShimmerVideoCardContainer from './ShimmerVideoCardContainer'
 const ChannelVideoList = () => {
     const [ searchParams ] = useSearchParams()
-    const [ videoList , setVideoList ] = useState()
+    const [ videoList , setVideoList ] = useState([])
     // console.log(searchParams.get(`channelId`))
     const channelId = searchParams.get(`channelId`)
     useEffect(()=>{
         fetchVideosByChannelId(channelId)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     const fetchVideosByChannelId = async(channelId) => {
         const YOUTUBE_CHANNEL_VIDEO_LIST_URL = `https://www.googleapis.com/youtube/v3/search?key=${MY_API_KEY}&channelId=${channelId}&part=snippet,id&order=date&maxResults=30`
@@ -21,13 +22,12 @@ const ChannelVideoList = () => {
 
     //early return
     if(!videoList) return null
-  return (
+  return videoList.length === 0  ? (<ShimmerVideoCardContainer />) : (
     <div className="p-2 flex flex-wrap ">
-            {/* {videoList.map(item=>(
-                    // <VideoCard key={item.id} items={item}/>
+            {videoList.map(item=>(
+                    <ChannelVideoCard key={item.id} items={item}/>
                 )
-            )} */}
-            <ChannelVideoCard data={videoList[0]} />
+            )}
     </div>
   )
 }
