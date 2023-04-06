@@ -3,7 +3,7 @@ import { MY_API_KEY } from '../utils/constants'
 import { convertToInternationalCurrencySystem } from '../utils/helper'
 import { Link } from 'react-router-dom'
 const ChannelInfoContainer = ({data}) => {
-    // const { snippet, id } = data
+    console.log(`data : ` ,data)
     const [ channelInfo , setChannelInfo ] = useState()
     useEffect(()=>{
         fetchChannelInfo(data?.id?.channelId)
@@ -19,6 +19,7 @@ const ChannelInfoContainer = ({data}) => {
 
     //early return
     if(!channelInfo) return null
+    console.log(`info : ` ,channelInfo)
     const { snippet , statistics } = channelInfo
     const getViewCountSuffix = convertToInternationalCurrencySystem(statistics?.subscriberCount)
     return (
