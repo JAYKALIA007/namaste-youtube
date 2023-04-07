@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import { Link } from 'react-router-dom'
 const ChannelVideoCard = ({items}) => {
     const  showSidebar  = useSelector(store => store.showSidebar.show)
-    console.log(items)
     const { snippet } = items 
     const { channelTitle , title, thumbnails } = snippet
 

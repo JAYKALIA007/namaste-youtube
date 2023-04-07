@@ -11,7 +11,7 @@ const ChannelVideoList = () => {
     useEffect(()=>{
         fetchVideosByChannelId(channelId)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[channelId])
     const fetchVideosByChannelId = async(channelId) => {
         const YOUTUBE_CHANNEL_VIDEO_LIST_URL = `https://www.googleapis.com/youtube/v3/search?key=${MY_API_KEY}&channelId=${channelId}&part=snippet,id&order=date&maxResults=30`
         const data = await fetch(YOUTUBE_CHANNEL_VIDEO_LIST_URL)
@@ -25,7 +25,7 @@ const ChannelVideoList = () => {
   return videoList.length === 0  ? (<ShimmerVideoCardContainer />) : (
     <div className="p-2 flex flex-wrap ">
             {videoList.map(item=>(
-                    <ChannelVideoCard key={item.id} items={item}/>
+                    <ChannelVideoCard key={item.id.videoId} items={item}/>
                 )
             )}
     </div>

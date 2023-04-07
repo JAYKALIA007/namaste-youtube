@@ -1,7 +1,6 @@
 import { AiOutlineHome , 
          AiOutlineVideoCameraAdd, 
          AiOutlineScissor, 
-         AiOutlineUser, 
          AiOutlineFire,
          AiOutlineShopping,
          AiOutlineTrophy,
@@ -17,6 +16,7 @@ import { TbLivePhoto } from "react-icons/tb";
 import { SiYoutubegaming } from "react-icons/si";
 import { BsNewspaper } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { SubscriptionList } from "./SubscriptionList";
 
 
 
@@ -38,13 +38,7 @@ const Sidebar = () => {
             </ul>
             <hr/>
             <h3 className="text-xl font-bold py-4 " >Subscriptions</h3>
-            <ul>
-                <li className="py-1"><AiOutlineUser className="inline mr-2"/>Channel 1</li>
-                <li className="py-1"><AiOutlineUser className="inline mr-2"/>Channel 2</li>
-                <li className="py-1"><AiOutlineUser className="inline mr-2"/>Channel 3</li>
-                <li className="py-1"><AiOutlineUser className="inline mr-2"/>Channel 4</li>
-                <li className="py-1"><AiOutlineUser className="inline mr-2"/>Channel 5</li>
-            </ul>
+            <SubscriptionList />
             <hr/>
             <h3 className="text-xl font-bold py-4 " >Explore</h3>
             <ul>
