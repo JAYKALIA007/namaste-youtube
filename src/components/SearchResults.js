@@ -13,6 +13,7 @@ const SearchResults = () => {
     useEffect(()=>{
         const SEARCH_RESULTS_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&safeSearch=moderate&key=${MY_API_KEY}`
         fetchSearchResults(SEARCH_RESULTS_URL)
+        window.scrollTo(0,0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [query])
     const fetchSearchResults = async (SEARCH_RESULTS_URL) => {

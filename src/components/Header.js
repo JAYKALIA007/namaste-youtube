@@ -9,7 +9,7 @@ const Header = () => {
     const dispatch = useDispatch()
     return(
         // <div className="mb-2 p-2 grid grid-flow-col shadow-xl" >
-        <div className="mb-2 p-2 grid grid-flow-col " >
+        <div className="mb-2 p-2 grid grid-flow-col sticky top-0  z-10 h-20 bg-white" >
             <div className="col-span-1" >
                 <button className="mx-4" onClick={()=>{ dispatch(toggleSidebar()) }}  ><AiOutlineMenu className="text-2xl relative top-2"/></button>
                 <Link to="/"><img className="inline-block ml-2 bg-white h-16 " src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-700x394.png" alt="youtube logo" /></Link>

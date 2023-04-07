@@ -1,6 +1,6 @@
-export const MY_API_KEY = `AIzaSyA-AwBNYBeU_i_XfAikK5QrdyfyujSWW2Y`
+export const MY_API_KEY = `AIzaSyD07gChVOIk1T1JjA673zgVUmykrXmA4d0`
 export const YOUTUBE_API_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=${MY_API_KEY}`
-export const SEARCH_QUERY_URL = `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`
+export const SEARCH_QUERY_URL = `https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`
 export const MESSAGE_LENGTH = 8;
 
 export const commentsList = [

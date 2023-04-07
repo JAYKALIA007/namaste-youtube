@@ -48,6 +48,8 @@ const SearchBar = () => {
 
   // console.log(suggestions)
 
+  if(!suggestions) return null
+
   return (
     <div className="relative top-4" >
         <input 
