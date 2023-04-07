@@ -22,7 +22,7 @@ import { SubscriptionList } from "./SubscriptionList";
 
 const Sidebar = () => {
     return(
-        <div className="w-1/6 border border-gray-400 shadow-lg rounded-md m-2 p-2 text-lg  overflow-y-scroll h-screen sticky top-12" >
+        <div className="w-1/6 shadow-lg rounded-md m-2 p-2 text-lg  overflow-y-scroll h-screen sticky top-12" >
             <ul className="py-2">
                 <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer "><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
                 <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>
