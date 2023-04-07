@@ -7,6 +7,7 @@ import MainContainer from './components/MainContainer';
 import ErrorPage from './components/ErrorPage';
 import SearchResults from './components/SearchResults';
 import ChannelVideoList from './components/ChannelVideoList';
+import ShowAllSubscriptions from './components/ShowAllSubscriptions';
 function App() {
   /*
     APP LAYOUT
@@ -43,6 +44,10 @@ function App() {
         {
           path: 'channel',
           element : <ChannelVideoList />
+        },
+        {
+          path: 'subscriptions',
+          element: <ShowAllSubscriptions />
         }
       ]
     }

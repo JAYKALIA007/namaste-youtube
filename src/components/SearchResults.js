@@ -14,7 +14,7 @@ const SearchResults = () => {
         const SEARCH_RESULTS_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&safeSearch=moderate&key=${MY_API_KEY}`
         fetchSearchResults(SEARCH_RESULTS_URL)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [query])
     const fetchSearchResults = async (SEARCH_RESULTS_URL) => {
         const data = await fetch(SEARCH_RESULTS_URL)
         const jsonData = await data.json()

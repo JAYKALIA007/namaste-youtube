@@ -22,37 +22,43 @@ import { SubscriptionList } from "./SubscriptionList";
 
 const Sidebar = () => {
     return(
-        <div className="w-1/6 border border-gray-400 shadow-lg rounded-lg m-2 p-2 text-lg" >
+        <div className="w-1/6 border-r border-gray-400 shadow-lg rounded-lg m-2 p-2 text-lg sticky top-2 overflow-y-scroll h-screen " >
             <ul className="py-2">
-                <li className="py-1"><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
-                <li className="py-1"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>
-                <li className="py-1"><MdOutlineSubscriptions className="inline mr-2"  />Subscriptions</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer "><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><MdOutlineSubscriptions className="inline mr-2"  />
+                <Link to="/subscriptions">Subscriptions</Link>
+                </li>
             </ul>
             <hr/>
             <ul>
-                <li className="py-1"><MdOutlineVideoLibrary className="inline mr-2" />Library</li>
-                <li className="py-1"><VscHistory className="inline mr-2"/>History</li>
-                <li className="py-1"><RiVideoLine className="inline mr-2"/>Your Videos</li>
-                <li className="py-1"><BiTimeFive className="inline mr-2"/>Watch Later</li>
-                <li className="py-1"><AiOutlineScissor className="inline mr-2"/>Your clips</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><MdOutlineVideoLibrary className="inline mr-2" />Library</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><VscHistory className="inline mr-2"/>History</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><RiVideoLine className="inline mr-2"/>Your Videos</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><BiTimeFive className="inline mr-2"/>Watch Later</li>
+                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineScissor className="inline mr-2"/>Your clips</li>
             </ul>
             <hr/>
             <h3 className="text-xl font-bold py-4 " >Subscriptions</h3>
+            <div className="h-[250px] overflow-y-scroll" >
             <SubscriptionList />
+            </div>
             <hr/>
             <h3 className="text-xl font-bold py-4 " >Explore</h3>
-            <ul>
-                <li className="py-1"><AiOutlineFire className="inline mr-2"/>Trending</li>
-                <li className="py-1"><AiOutlineShopping className="inline mr-2"/>Shopping</li>
-                <li className="py-1"><IoMusicalNoteOutline className="inline mr-2"/>Music</li>
-                <li className="py-1"><BiMovie className="inline mr-2"/>Movies</li>
-                <li className="py-1"><TbLivePhoto className="inline mr-2"/>Live</li>
-                <li className="py-1"><SiYoutubegaming className="inline mr-2"/>Gaming</li>
-                <li className="py-1"><BsNewspaper className="inline mr-2"/>News</li>
-                <li className="py-1"><AiOutlineTrophy className="inline mr-2"/>Sports</li>
-                <li className="py-1"><AiOutlineBulb className="inline mr-2"/>Learning</li>
-                <li className="py-1"><AiOutlineShop className="inline mr-2"/>Fashion & Beauty</li>
-            </ul>
+            <div className="h-[200px] " >
+                <ul >
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineFire className="inline mr-2"/>Trending</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineShopping className="inline mr-2"/>Shopping</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><IoMusicalNoteOutline className="inline mr-2"/>Music</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><BiMovie className="inline mr-2"/>Movies</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><TbLivePhoto className="inline mr-2"/>Live</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><SiYoutubegaming className="inline mr-2"/>Gaming</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><BsNewspaper className="inline mr-2"/>News</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineTrophy className="inline mr-2"/>Sports</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineBulb className="inline mr-2"/>Learning</li>
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineShop className="inline mr-2"/>Fashion & Beauty</li>
+                </ul>
+            </div>  
         </div>
     )
 }
