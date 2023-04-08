@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { subscriptionsList } from '../utils/constants'
 import  { Link } from 'react-router-dom'
 const ShowAllSubscriptions = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
     // early return
     if(!subscriptionsList) return null
