@@ -26,7 +26,7 @@ const SearchResults = () => {
     //early return
     if(!searchResults) return null
   return searchResults.length === 0 ? <ShimmerSearchCardContainer /> : (
-    <div>
+    <div className='w-10/12' >
         {searchResults.map(result => (
             <SearchResultCard key={result?.id?.videoId ? result?.id?.videoId : result?.id?.channelId} data={result} isChannel={result?.id?.kind === 'youtube#channel' ? true : false} />
         ))}

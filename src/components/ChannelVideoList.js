@@ -23,7 +23,7 @@ const ChannelVideoList = () => {
     //early return
     if(!videoList) return null
   return videoList.length === 0  ? (<ShimmerVideoCardContainer />) : (
-    <div className="p-2 flex flex-wrap ">
+    <div className="p-2  w-full flex flex-wrap">
             {videoList.map(item=>(
                     <ChannelVideoCard key={item.id.videoId} items={item}/>
                 )

@@ -22,13 +22,15 @@ import { SubscriptionList } from "./SubscriptionList";
 
 const Sidebar = () => {
     return(
-        <div className="w-1/6 shadow-lg rounded-md m-2 p-2 text-lg  overflow-y-scroll h-screen sticky top-12" >
+        <div className="w-max shadow-lg rounded-md m-2 p-2 overflow-y-scroll h-screen sticky top-12 text-md" >
             <ul className="py-2">
-                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer "><Link to="/"><AiOutlineHome className="inline mr-2" />Home</Link></li>
+                <Link to="/"><li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer "><AiOutlineHome className="inline mr-2" />Home</li></Link>
                 <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><AiOutlineVideoCameraAdd className="inline mr-2" />Shorts</li>
-                <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><MdOutlineSubscriptions className="inline mr-2"  />
-                <Link to="/subscriptions">Subscriptions</Link>
-                </li>
+                <Link to="/subscriptions">
+                    <li className="py-1 px-2 hover:bg-slate-100 rounded-md cursor-pointer"><MdOutlineSubscriptions className="inline mr-2"  />
+                        Subscriptions
+                    </li>
+                </Link>
             </ul>
             <hr/>
             <ul>
