@@ -19,7 +19,7 @@ const ChannelInfoContainer = ({data}) => {
     //early return
     if(!channelInfo) return null
     const { snippet , statistics } = channelInfo
-    const getViewCountSuffix = convertToInternationalCurrencySystem(statistics?.subscriberCount)
+    const getSubsCountSuffix = convertToInternationalCurrencySystem(statistics?.subscriberCount)
     return (
         <Link to={`/channel?channelId=${channelInfo?.id}`}>
             <div className='flex flex-row m-1 my-2 p-2 border border-gray-500 rounded-md w-full ' >
@@ -27,7 +27,7 @@ const ChannelInfoContainer = ({data}) => {
                 <div className='w-2/3 mx-4 mt-1' >
                     <p className='text-xl font-bold mb-2 ' >{snippet?.title}</p>
                     <p className='text-md font-bold mb-2 inline ' >{snippet?.customUrl}</p>
-                    <p className='text-sm inline' >{` - ${getViewCountSuffix} subscribers`}</p>
+                    <p className='text-sm inline' >{` - ${getSubsCountSuffix} subscribers`}</p>
                     <p className='text-sm ' >{snippet?.description}</p>
                 </div>
             </div>
