@@ -1,8 +1,8 @@
-export const MY_API_KEY = `AIzaSyBA4AmsgxjROXRKyu4ZdmVyGo-cFUFHzd8`
+export const MY_API_KEY = `AIzaSyCd-YmirSMYqiobWoh-LHtxhIpMA1HUumI`
 export const YOUTUBE_API_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=${MY_API_KEY}`
-export const SEARCH_QUERY_URL = `https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`
+export const SEARCH_QUERY_URL = `https://suggestqueries.google.com/complete/search?client=firefox&dsAIzaSyBBxR2r38ucokyCiCoEbitcXh3pO0VyX5M=yt&q=`
 export const MESSAGE_LENGTH = 8;
-
+export const LIVE_VIDEO_QUERY_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=25&q=news&type=video&key=${MY_API_KEY}`
 export const commentsList = [
     {
         name : 'John Doe',

@@ -11,14 +11,14 @@ const WatchVideoInfo = ({videoData , desc, channelInfo}) => {
     //early return
     if(!videoData) return null
     if(!channelInfo) return null
-    // console.log(channelInfo)
 
     const { snippet, statistics } = videoData
-    const { title, channelTitle, description, publishedAt } = snippet
+    const { title, channelTitle, description, publishedAt, thumbnails } = snippet
     const { viewCount , likeCount } = statistics
     const viewCountInInternationalCurrencySystem = convertToInternationalCurrencySystem(viewCount)
     const likeCountInInternationalCurrencySystem = convertToInternationalCurrencySystem(likeCount)
     const getSubsCountSuffix = convertToInternationalCurrencySystem(channelInfo?.statistics?.subscriberCount)
+
 
     // calculate time elapsed
     const timeElapsed = timeAgo(new Date(publishedAt))
@@ -30,7 +30,7 @@ const WatchVideoInfo = ({videoData , desc, channelInfo}) => {
         <div className='text-md font-bold my-5 grid grid-flow-col' >
             <div className='col-span-1 ' >
                 <div className='grid grid-flow-col' >
-                    <img className='h-10 rounded-full inline mr-2 ' src={channelInfo?.snippet?.thumbnails?.medium?.url} alt={snippet?.title} />
+                    <img className='h-12 w-12 rounded-full inline mr-2 ' src={thumbnails?.default?.url} alt={snippet?.title} />
                     <div className='flex flex-col relative bottom-2 ' >
                         <span className='font-bold ' >{channelTitle}</span>
                         <span className=' font-light font-sm' >{getSubsCountSuffix} subscribers</span>
@@ -46,7 +46,7 @@ const WatchVideoInfo = ({videoData , desc, channelInfo}) => {
                         liked ?    <AiFillLike className='inline text-xl mx-1 cursor-pointer' onClick={()=>(setLiked(false))} />  
                               :    <AiOutlineLike className='inline text-xl mx-1 cursor-pointer'  onClick={()=>(setLiked(true))} />
                     }
-                    <span className='text-sm' >{likeCountInInternationalCurrencySystem}</span>
+                    <span className='text-sm' >{ (likeCountInInternationalCurrencySystem && isNaN(likeCount)) ? `Like` : likeCountInInternationalCurrencySystem}</span>
                     <span className='font-thin mx-1 ' > | </span>
                     {
                         disliked ?    <AiFillDislike className='inline text-xl mx-1 cursor-pointer' onClick={()=>(setDisiked(false))} />  

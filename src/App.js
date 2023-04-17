@@ -8,6 +8,7 @@ import ErrorPage from './components/ErrorPage';
 import SearchResults from './components/SearchResults';
 import ChannelVideoList from './components/ChannelVideoList';
 import ShowAllSubscriptions from './components/ShowAllSubscriptions';
+import LiveVideosList from './components/LiveVideosList';
 function App() {
   /*
     APP LAYOUT
@@ -48,6 +49,10 @@ function App() {
         {
           path: 'subscriptions',
           element: <ShowAllSubscriptions />
+        },
+        {
+          path: 'live',
+          element: <LiveVideosList />
         }
       ]
     }

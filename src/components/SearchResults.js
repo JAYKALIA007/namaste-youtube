@@ -32,7 +32,6 @@ const SearchResults = () => {
         ))}
     </div>
   )
-// return <ShimmerSearchCardContainer />
 }
 
 export default SearchResults

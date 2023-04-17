@@ -7,14 +7,18 @@ import CommentsContainer from './CommentsContainer';
 import LiveCommentsContainer from './LiveCommentsContainer';
 import { MY_API_KEY } from '../utils/constants';
 import WatchVideoInfo from './WatchVideoInfo';
+import ShowVideoSuggestions from './ShowVideoSuggestions';
 
 const WatchVideo = () => {
     const dispatch = useDispatch()
 
     const [ videoInfo , setVideoInfo ] = useState()
     const [ channelInfo , setChannelInfo ] = useState()
+    const [ isLiveVideo , setIsLiveVideo ] = useState(false)
+    const [ tags, setTags ] = useState()
     const [searchParams] = useSearchParams();
     const videoId = searchParams.get("v")
+
 
     // console.log(videoId)
 
@@ -24,13 +28,15 @@ const WatchVideo = () => {
         const getVideoInfoUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${MY_API_KEY}`
         fetchVideoInfo(getVideoInfoUrl)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[videoId])
 
     const fetchVideoInfo = async(url) => {
       const data  = await fetch(url)
       const jsonData = await data.json()
       // console.log(jsonData?.items[0])
       setVideoInfo(jsonData?.items[0])
+      setIsLiveVideo(jsonData?.items[0]?.snippet?.liveBroadcastContent === 'live')
+      setTags(jsonData?.items[0]?.snippet.tags)
       fetchChannelInfo(jsonData?.items[0]?.snippet?.channelId)
     }
     
@@ -41,6 +47,9 @@ const WatchVideo = () => {
       // console.log(jsonData?.items[0])
       setChannelInfo(jsonData?.items[0])
     }
+
+    //early return for 
+    if(!tags || !videoInfo || !channelInfo) return null
 
   return (
     <div className='flex w-full' >
@@ -57,12 +66,10 @@ const WatchVideo = () => {
             <br/>
             <WatchVideoInfo videoData={videoInfo} desc={videoInfo?.snippet?.description} channelInfo = {channelInfo}  />
         </div>
-        <div>
-          <CommentsContainer />
-        </div>
+        { !isLiveVideo && <CommentsContainer />}
       </div>
       <div className='w-full' >
-        <LiveCommentsContainer />
+        { isLiveVideo ? <LiveCommentsContainer /> : <ShowVideoSuggestions tags={tags} />}
       </div>
     </div>
     
