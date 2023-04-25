@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { timeAgo } from '../utils/helper'
 const SuggestedVideoCard = ({data}) => {
     if(!data) return null
-    console.log(data)
+    // console.log(data)
     const { snippet } = data
     const { title, channelTitle, thumbnails, publishedAt } = snippet
     //  calculate time elapsed
