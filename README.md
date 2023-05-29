@@ -6,3 +6,5 @@ A highly scalable, fast-loading, perfomant video streaming platform using React 
 - Supports n-level nested comments and live comments feature.
 
 - Implemented custom shimmer effects as loading animations for improving the UX.
+
+- Used react router dom for routing 
