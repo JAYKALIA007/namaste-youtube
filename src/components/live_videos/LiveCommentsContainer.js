@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import LiveComment from './LiveComment'
 import { useDispatch , useSelector } from 'react-redux'
-import { addMessages } from '../utils/liveChatSlice'
-import { generateRandomNames, randomMessageGenerator } from '../utils/helper'
-import { MESSAGE_LENGTH } from '../utils/constants'
+import { addMessages } from '../../utils/liveChatSlice'
+import { generateRandomNames, randomMessageGenerator } from '../../utils/helper'
+import { MESSAGE_LENGTH } from '../../utils/constants'
 
 const LiveCommentsContainer = () => {
 

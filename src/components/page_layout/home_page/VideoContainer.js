@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { YOUTUBE_API_URL } from "../utils/constants"
-import ShimmerVideoCardContainer from "./ShimmerVideoCardContainer"
+import { YOUTUBE_API_URL } from "../../../utils/constants"
+import ShimmerVideoCardContainer from "../../shimmer/ShimmerVideoCardContainer"
 import VideoCard from "./VideoCard"
 const VideoContainer = () => {
     const [ videoList , setVideoList ] = useState([])

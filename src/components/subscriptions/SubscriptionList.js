@@ -1,5 +1,5 @@
 import React from 'react'
-import { subscriptionsList } from '../utils/constants'
+import { subscriptionsList } from '../../utils/constants'
 import  { Link } from 'react-router-dom'
 export const SubscriptionList = () => {
 

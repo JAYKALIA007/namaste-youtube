@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ChannelInfoContainer from './ChannelInfoContainer'
+import ChannelInfoContainer from '../channel/ChannelInfoContainer'
 const SearchResultCard = ({ data , isChannel }) => {
     if(!data)return null
     // console.log(data)

@@ -1,5 +1,5 @@
 import Button from "./Button"
-import { filterButtonNameList } from "../utils/constants"
+import { filterButtonNameList } from "../../../utils/constants"
 import { Link } from "react-router-dom"
 
 const FilterButtonContainer = () => {

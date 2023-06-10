@@ -16,7 +16,7 @@ import { TbLivePhoto } from "react-icons/tb";
 import { SiYoutubegaming } from "react-icons/si";
 import { BsNewspaper } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { SubscriptionList } from "./SubscriptionList";
+import { SubscriptionList } from "../subscriptions/SubscriptionList";
 
 
 

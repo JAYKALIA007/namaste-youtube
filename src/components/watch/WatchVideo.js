@@ -1,11 +1,11 @@
 // import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { closeSidebar } from "../utils/showSidebarSlice"
+import { closeSidebar } from "../../utils/showSidebarSlice"
 import { useEffect, useState } from 'react'
 import { useSearchParams } from "react-router-dom";
-import CommentsContainer from './CommentsContainer';
-import LiveCommentsContainer from './LiveCommentsContainer';
-import { MY_API_KEY } from '../utils/constants';
+import CommentsContainer from '../nested_comments/CommentsContainer';
+import LiveCommentsContainer from '../live_videos/LiveCommentsContainer';
+import { MY_API_KEY } from '../../utils/constants';
 import WatchVideoInfo from './WatchVideoInfo';
 import ShowVideoSuggestions from './ShowVideoSuggestions';
 

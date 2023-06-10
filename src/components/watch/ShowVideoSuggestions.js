@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { MY_API_KEY } from '../utils/constants'
+import { MY_API_KEY } from '../../utils/constants'
 import SuggestedVideoCard from './SuggestedVideoCard'
 
 const ShowVideoSuggestions = ({ tags }) => {

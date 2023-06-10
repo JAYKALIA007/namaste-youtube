@@ -1,10 +1,10 @@
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect } from 'react'
-import { SEARCH_QUERY_URL } from "../utils/constants";
+import { SEARCH_QUERY_URL } from "../../utils/constants";
 import { useSelector , useDispatch } from 'react-redux'
-import { addToCache } from "../utils/searchSuggestionsCacheSlice";
+import { addToCache } from "../../utils/searchSuggestionsCacheSlice";
 import SearchBarSuggestionContainer from "./SearchBarSuggestionContainer";
-import { showSuggestionsContainer } from "../utils/showSearchSuggestionsSlice";
+import { showSuggestionsContainer } from "../../utils/showSearchSuggestionsSlice";
 const SearchBar = () => {
   const [ searchQuery , setSearchQuery ] = useState("")
   const [ suggestions , setSuggestions ] = useState()

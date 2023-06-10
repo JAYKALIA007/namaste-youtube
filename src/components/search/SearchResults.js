@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from "react-router-dom";
-import { MY_API_KEY } from '../utils/constants';
+import { MY_API_KEY } from '../../utils/constants';
 import SearchResultCard from './SearchResultCard';
 import { useDispatch } from 'react-redux'; 
-import { showSuggestionsContainer } from '../utils/showSearchSuggestionsSlice';
-import ShimmerSearchCardContainer from './ShimmerSearchCardContainer';
+import { showSuggestionsContainer } from '../../utils/showSearchSuggestionsSlice';
+import ShimmerSearchCardContainer from '../shimmer/ShimmerSearchCardContainer';
 const SearchResults = () => {
     const [ searchParams ] = useSearchParams()
     const [ searchResults , setSearchResults ] = useState([])

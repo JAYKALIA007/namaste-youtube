@@ -1,9 +1,9 @@
 import { AiOutlineMenu , AiOutlineUser } from "react-icons/ai";
 import { RiVideoAddLine } from "react-icons/ri";
 import { MdOutlineNotifications } from "react-icons/md";
-import SearchBar from "./SearchBar";
+import SearchBar from "../search/SearchBar";
 import { useDispatch } from 'react-redux'
-import { toggleSidebar } from "../utils/showSidebarSlice";
+import { toggleSidebar } from "../../utils/showSidebarSlice";
 import { Link } from 'react-router-dom'
 const Header = () => {
     const dispatch = useDispatch()

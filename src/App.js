@@ -1,14 +1,14 @@
 import './App.css';
-import Body from './components/Body';
-import Header from './components/Header';
+import Body from './components/page_layout/Body';
+import Header from './components/page_layout/Header';
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
-import WatchVideo from './components/WatchVideo';
-import MainContainer from './components/MainContainer';
+import WatchVideo from './components/watch/WatchVideo';
+import MainContainer from './components/page_layout/home_page/MainContainer';
 import ErrorPage from './components/ErrorPage';
-import SearchResults from './components/SearchResults';
-import ChannelVideoList from './components/ChannelVideoList';
-import ShowAllSubscriptions from './components/ShowAllSubscriptions';
-import LiveVideosList from './components/LiveVideosList';
+import SearchResults from './components/search/SearchResults';
+import ChannelVideoList from './components/channel/ChannelVideoList';
+import ShowAllSubscriptions from './components/subscriptions/ShowAllSubscriptions';
+import LiveVideosList from './components/live_videos/LiveVideosList';
 function App() {
   /*
     APP LAYOUT

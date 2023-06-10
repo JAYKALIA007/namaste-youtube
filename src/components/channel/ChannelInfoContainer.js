@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { MY_API_KEY } from '../utils/constants'
-import { convertToInternationalCurrencySystem } from '../utils/helper'
+import { MY_API_KEY } from '../../utils/constants'
+import { convertToInternationalCurrencySystem } from '../../utils/helper'
 import { Link } from 'react-router-dom'
 const ChannelInfoContainer = ({data}) => {
     const [ channelInfo , setChannelInfo ] = useState()

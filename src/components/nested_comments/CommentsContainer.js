@@ -1,5 +1,5 @@
 import React from 'react'
-import { commentsList } from '../utils/constants'
+import { commentsList } from '../../utils/constants'
 import CommentsList from './CommentsList'
 const CommentsContainer = () => {
   return (

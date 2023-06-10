@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { LIVE_VIDEO_QUERY_URL } from '../utils/constants'
-import ShimmerSearchCardContainer from './ShimmerSearchCardContainer'
-import SearchResultCard from './SearchResultCard'
+import { LIVE_VIDEO_QUERY_URL } from '../../utils/constants'
+import ShimmerSearchCardContainer from '../shimmer/ShimmerSearchCardContainer'
+import SearchResultCard from '../search/SearchResultCard'
 
 const LiveVideosList = () => {
     const [ videoList, setVideoList ] = useState([])

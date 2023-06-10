@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { timeAgo } from '../utils/helper'
+import { timeAgo } from '../../utils/helper'
 const SuggestedVideoCard = ({data}) => {
     if(!data) return null
     // console.log(data)

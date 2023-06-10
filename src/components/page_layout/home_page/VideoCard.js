@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { Link } from 'react-router-dom'
-import { convertToInternationalCurrencySystem } from "../utils/helper"
+import { convertToInternationalCurrencySystem } from "../../../utils/helper"
 
 const VideoCard = ({items}) => {
     const  showSidebar  = useSelector(store => store.showSidebar.show)

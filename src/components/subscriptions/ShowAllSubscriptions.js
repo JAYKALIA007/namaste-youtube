@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { subscriptionsList } from '../utils/constants'
+import { subscriptionsList } from '../../utils/constants'
 import  { Link } from 'react-router-dom'
 const ShowAllSubscriptions = () => {
 

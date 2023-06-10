@@ -1,8 +1,8 @@
 import { useEffect , useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { MY_API_KEY } from '../utils/constants'
+import { MY_API_KEY } from '../../utils/constants'
 import ChannelVideoCard from './ChannelVideoCard'
-import ShimmerVideoCardContainer from './ShimmerVideoCardContainer'
+import ShimmerVideoCardContainer from '../shimmer/ShimmerVideoCardContainer'
 const ChannelVideoList = () => {
     const [ searchParams ] = useSearchParams()
     const [ videoList , setVideoList ] = useState([])

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { convertToInternationalCurrencySystem, timeAgo } from '../utils/helper'
+import { convertToInternationalCurrencySystem, timeAgo } from '../../utils/helper'
 import { AiOutlineLike, AiFillLike, AiOutlineDislike , AiFillDislike } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
 import { TfiDownload } from 'react-icons/tfi'
